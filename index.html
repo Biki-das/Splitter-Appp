@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Vite App</title>
+  </head>
+  <body>
+    <div class="bg-LightGrayishCyan w-screen h-screen overflow-hidden">
+      <h1
+        class="mt-[50px] lg:mt-[80px] text-center leading-[1.5rem] text-[20px] tracking-[0.75rem] text-veryDarkCyan"
+      >
+        SPLI <br />TTER
+      </h1>
+      <main
+        class="mt-[40px] h-full md:h-[480px] md:w-[90%] lg:w-[923px] bg-white mx-auto rounded-2xl md:flex items-center p-[1.5rem] gap-x-[50px]"
+      >
+        <section
+          class="flex-1 md:container h-[470px] lg:h-[420px] lg:w-[420px] bg-white"
+        >
+          <div class="lg:ml-[40px] relative md:mt-[30px]">
+            <label class="text-GrayishCyan" for="bill">Bill</label>
+            <img
+              class="absolute bottom-[1rem] left-[1rem]"
+              src="./Assests/images/icon-dollar.svg"
+            />
+            <input
+              id="Bill"
+              class="transition-[border] text-veryDarkCyan text-[20px] duration-[0.3s] border-transparent border-2 focus:border-[#1fbda6] hover:border-[#1fbda6] block text-right rounded-lg mt-[11px] bg-veryLightgrayishcyan w-[98%] lg:w-[380px] h-[45px] outline-none px-4"
+              type="text"
+              placeholder="0"
+            />
+          </div>
+          <div class="lg:ml-[40px] mt-[40px] md:mt-[45px]">
+            <p class="text-GrayishCyan">Select Tip%</p>
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mt-[22px] md:mt-[20px]">
+              <div
+                 tabindex="0"
+                class="tip-percent cursor-pointer bg-veryDarkCyan hover:bg-[#1fbda6] transition-[background] duration-[0.3s] flex justify-center items-center text-white h-[48px] rounded-lg text-center"
+              >
+                <p class="text-[20px] pointer-events-none">5%</p>
+              </div>
+              <div
+                tabindex="0"                
+                class="tip-percent cursor-pointer bg-veryDarkCyan hover:bg-[#1fbda6] transition-[background] duration-[0.3s] flex justify-center items-center text-white text-center h-[48px] rounded-lg"
+              >
+                <p class="text-[20px] pointer-events-none">10%</p>
+              </div>
+              <div
+              tabindex="0"   
+                class="tip-percent cursor-pointer bg-veryDarkCyan hover:bg-[#1fbda6] transition-[background] duration-[0.3s] flex justify-center items-center text-white text-center h-[48px] rounded-lg"
+              >
+                <p class="text-[20px] pointer-events-none">15%</p>
+              </div>
+              <div
+              tabindex="0"   
+              class="tip-percent cursor-pointer bg-veryDarkCyan hover:bg-[#1fbda6] transition-[background] duration-[0.3s] flex justify-center items-center text-white text-center h-[48px] rounded-lg"
+            >
+              <p class="text-[20px] pointer-events-none">25%</p>
+            </div>
+            <div
+            tabindex="0"   
+            class="tip-percent cursor-pointer bg-veryDarkCyan  hover:bg-[#1fbda6] transition-[background] duration-[0.3s] flex justify-center items-center text-white text-center h-[48px] rounded-lg"
+          >
+            <p class="text-[20px] pointer-events-none">50%</p>
+          </div>
+          <div
+          tabindex="0"   
+          class="tip-percent flex justify-center items-center h-[48px] basis-[147px]"
+        >
+          <input 
+            placeholder="Custom"
+            class="placeholder:text-center placeholder:text-[20px] placeholder:text-GrayishCyan  w-full h-full text-right text-veryDarkCyan text-[20px] outline-none border-2 border-transparent transition-[border] duration-[0.3s] focus:border-[#1fbda6] hover:border-[#1fbda6] rounded-lg bg-veryLightgrayishcyan px-2"
+          />
+        </div>
+        </div>
+        <div class="relative  mt-[30px]">
+          <label class="text-GrayishCyan text-[14px]" for="bill">Number of People</label>
+          <img
+            class="absolute bottom-[1rem] left-[1rem]"
+            src="./Assests/images/icon-person.svg"
+          />
+          <input
+            id="person"
+            class="transition-[border] text-veryDarkCyan text-[20px] duration-[0.3s] border-transparent border-2 focus:border-[#1fbda6] hover:border-[#1fbda6] block text-right rounded-lg mt-[8px] lg:mt-[11px] bg-veryLightgrayishcyan w-[98%] lg:w-[380px] h-[45px] outline-none px-4"
+            type="text"
+            placeholder="0"
+          />
+        </div>  
+        </section>
+        <section
+          class="flex-1 md:container h-[260px] md:h-[420px] lg:w-[420px] bg-veryDarkCyan rounded-2xl overflow-hidden"
+        >
+          <div
+            id="amount"
+            class="flex items-center w-[90%] lg:w-[335px] mx-auto justify-between mt-[44px] lg:mt-[62px]"
+          >
+            <div class="textcontainer basis-[100px]">
+              <p class="text-white text-[14px]">Tip Amount</p>
+              <p class="text-Darkgrayishcyan text-[12px]">/ person</p>
+            </div>
+            <p id="tip-Amt" class="text-[43px] text-[#1fbda6]">$0.00</p>
+          </div>
+          <div
+            id="person"
+            class="flex items-center w-[90%] lg:w-[335px] mx-auto justify-between lg:mt-[40px]"
+          >
+            <div class="textcontainer basis-[100px]">
+              <p class="text-white text-[14px]">Total</p>
+              <p class="text-Darkgrayishcyan text-[12px]">/ person</p>
+            </div>
+            <p id="finalAmt" class="text-[43px] text-[#1fbda6]">$0.00</p>
+          </div>
+          <div
+            class="lg:w-[335px] w-[90%] cursor-pointer container mt-[20px] mx-auto bg-[#1fbda6] hover:bg-LightGrayishCyan transition-[background] duration-[0.3s] flex justify-center h-[48px] rounded-lg md:mt-[140px] lg:mt-[100px]"
+          >
+            <button class="text-veryDarkCyan">RESET</button>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>
