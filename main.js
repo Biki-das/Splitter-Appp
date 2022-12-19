@@ -6,6 +6,13 @@ let finalAmt = document.querySelector("#finalAmt");
 let tipPercent = document.querySelectorAll(".tip-percent");
 let tipAmt = document.querySelector("#tip-Amt");
 let customInput = document.querySelector("#custom-input");
+let resetBtn = document.querySelector("#btn-reset");
+let pattern1 = new RegExp(/^\d+$/);
+let pattern2 = new RegExp(/^[1-9][0-9]*$/);
+let billInpErrtxt = document.querySelector("#Bill-input-error");
+let billzeroIntErrtxt = document.querySelector("#input-0-error");
+let peopleInpErrtxt = document.querySelector("#People-input-error");
+let peopleInpZeroErrtxt = document.querySelector("#People-input-error-0");
 
 //clearing input fields on refresh
 if (performance.navigation.type == performance.navigation.TYPE_RELOAD) {
@@ -31,6 +38,35 @@ let customValue = 0;
 
 function billAmtFunc() {
   billValue = parseFloat(billAmt.value);
+
+  if (pattern1.test(billAmt.value) === false) {
+    billInpErrtxt.classList.remove("hidden");
+    billAmt.style.border = "2px solid red";
+  } else {
+    billInpErrtxt.classList.add("hidden");
+    billAmt.style.border = "2px solid #1fbda6";
+  }
+
+  if (isNaN(billValue) || billAmt.value == "") {
+    billzeroIntErrtxt.classList.add("hidden");
+  }
+
+  if (!pattern2.test(billValue)) {
+    billzeroIntErrtxt.classList.remove("hidden");
+    billAmt.style.border = "2px solid red";
+  } else {
+    billzeroIntErrtxt.classList.add("hidden");
+    billAmt.style.border = "2px solid #1fbda6";
+  }
+
+  if (isNaN(billValue)) {
+    billzeroIntErrtxt.classList.add("hidden");
+  }
+  if (billAmt.value == "") {
+    billInpErrtxt.classList.add("hidden");
+    billAmt.style.border = "none";
+  }
+
   calculateTip();
 }
 
@@ -41,7 +77,34 @@ function customInputFunc(e) {
 
 function peopleNumFunc() {
   peopleCount = parseFloat(peopleNums.value);
-  console.log(peopleCount);
+
+  if (pattern1.test(peopleNums.value) === false) {
+    peopleInpErrtxt.classList.remove("hidden");
+    peopleNums.style.border = "2px solid red";
+  } else {
+    peopleInpErrtxt.classList.add("hidden");
+    peopleNums.style.border = "2px solid #1fbda6";
+  }
+
+  if (isNaN(peopleCount) || peopleNums.value == "") {
+    peopleInpZeroErrtxt.classList.add("hidden");
+  }
+
+  if (!pattern2.test(peopleCount)) {
+    peopleInpZeroErrtxt.classList.remove("hidden");
+    peopleNums.style.border = "2px solid red";
+  } else {
+    peopleInpZeroErrtxt.classList.add("hidden");
+    peopleNums.style.border = "2px solid #1fbda6";
+  }
+
+  if (isNaN(peopleCount)) {
+    peopleInpZeroErrtxt.classList.add("hidden");
+  }
+  if (peopleNums.value == "") {
+    peopleInpErrtxt.classList.add("hidden");
+    peopleNums.style.border = "none";
+  }
 
   calculateTip();
 }
@@ -117,3 +180,11 @@ function calculateTip() {
     finalAmt.textContent = "$0.00";
   }
 }
+
+resetBtn.addEventListener("click", () => {
+  tipAmt.textContent = "$0.00";
+  finalAmt.textContent = "$0.00";
+  peopleNums.value = "";
+  peopleNums.value = "";
+  customInput.value = "";
+});

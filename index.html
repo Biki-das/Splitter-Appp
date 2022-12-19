@@ -25,6 +25,8 @@
           class="flex-1 md:container h-[470px] lg:h-[420px] lg:w-[420px] bg-white"
         >
           <div class="lg:ml-[40px] relative md:mt-[30px]">
+            <span id="input-0-error" class="text-red-500 absolute right-0 hidden">Can't be Zero</span>
+            <span id="Bill-input-error" class="text-red-500 absolute right-0 hidden">Must be a Number</span>
             <label class="text-GrayishCyan" for="bill">Bill</label>
             <img
               class="absolute bottom-[1rem] left-[1rem]"
@@ -33,7 +35,7 @@
             <input
               id="Bill"
               class="transition-[border] text-veryDarkCyan text-[20px] duration-[0.3s] border-transparent border-2 focus:border-[#1fbda6] hover:border-[#1fbda6] block text-right rounded-lg mt-[11px] bg-veryLightgrayishcyan w-[98%] lg:w-[380px] h-[45px] outline-none px-4"
-              type="text"
+              type="number"
               placeholder="0"
             />
           </div>
@@ -82,6 +84,8 @@
         </div>
         </div>
         <div class="relative  mt-[30px]">
+          <span id="People-input-error-0" class="text-red-500 absolute right-0 hidden">Can't Be Zero</span>
+          <span id="People-input-error"   class="text-red-500 absolute right-0 hidden">Must be a number</span>
           <label class="text-GrayishCyan text-[14px]" for="bill">Number of People</label>
           <img
             class="absolute bottom-[1rem] left-[1rem]"
@@ -90,7 +94,7 @@
           <input
             id="person"
             class="transition-[border] text-veryDarkCyan text-[20px] duration-[0.3s] border-transparent border-2 focus:border-[#1fbda6] hover:border-[#1fbda6] block text-right rounded-lg mt-[8px] lg:mt-[11px] bg-veryLightgrayishcyan w-[98%] lg:w-[380px] h-[45px] outline-none px-4"
-            type="text"
+            type="number"
             placeholder="0"
           />
         </div>  
@@ -119,9 +123,9 @@
             <p id="finalAmt" class="text-[43px] text-[#1fbda6]">$0.00</p>
           </div>
           <div
-            class="lg:w-[335px] w-[90%] cursor-pointer container mt-[20px] mx-auto bg-[#1fbda6] hover:bg-LightGrayishCyan transition-[background] duration-[0.3s] flex justify-center h-[48px] rounded-lg md:mt-[140px] lg:mt-[100px]"
+            id="btn-reset" class="lg:w-[335px] w-[90%] cursor-pointer container mt-[20px] mx-auto bg-[#1fbda6] hover:bg-LightGrayishCyan transition-[background] duration-[0.3s] flex justify-center h-[48px] rounded-lg md:mt-[140px] lg:mt-[100px]"
           >
-            <button class="text-veryDarkCyan">RESET</button>
+            <button  class="text-veryDarkCyan">RESET</button>
           </div>
         </section>
       </main>
